@@ -21,6 +21,17 @@ upBtn.addEventListener(`click`, () => {
 downBtn.addEventListener(`click`, () => {
     changeSlide(`down`)
 })
+
+// Делвем так чтобы слайды менялись при нажитии на клаву
+document.addEventListener(`keydown`, 
+event => {
+    if(event.key === `ArrowUp`) {
+        changeSlide(`up`)
+    } else if(event.key === `ArrowDown`) {
+        changeSlide(`down`)
+    }
+})
+
 // Создаем функцию для правильной работы кнопок
 function changeSlide(direction) {
     if(direction === `up`) {
